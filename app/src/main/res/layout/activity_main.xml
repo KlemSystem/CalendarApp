@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/calendarView"
+            android:layout_alignTop="@+id/calendarView"
+            android:layout_alignEnd="@+id/calendarView"
+            android:layout_alignBottom="@+id/calendarView"
+            android:src="@drawable/rounded_background"/>
+
+        <TextView
+            android:id="@+id/selectedDateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calendarView"
+            android:layout_margin="16dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:text="01-01-2024:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/noEventsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectedDateText"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="left"
+            android:text="(мероприятий нет)"
+            android:textColor="#696969"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/eventList"
+            android:layout_alignEnd="@+id/eventList"
+            android:layout_alignBottom="@+id/eventList"
+            android:layout_alignTop="@+id/eventList"
+            android:src="@drawable/rounded_background"/>
+
+        <ListView
+            android:id="@+id/eventList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/selectedDateText"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/btnAddEvent"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/add"
+        android:contentDescription="Добавить мероприятие"
+        android:elevation="4dp" />
+</FrameLayout>
+<!--WORK-->
